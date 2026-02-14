@@ -1,0 +1,27 @@
+n = int(input())
+cards = list(map(int, input().split()))
+
+left = 0
+right = n - 1
+seryozha = 0
+dima = 0
+turn = 0 
+
+while left <= right:
+    if turn % 2 == 0: 
+        if cards[left] > cards[right]:
+            seryozha += cards[left]
+            left += 1
+        else:
+            seryozha += cards[right]
+            right -= 1
+    else: 
+        if cards[left] > cards[right]:
+            dima += cards[left]
+            left += 1
+        else:
+            dima += cards[right]
+            right -= 1
+    turn += 1
+
+print(seryozha, dima)
