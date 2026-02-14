@@ -1,0 +1,15 @@
+n = int(input())
+s = input().strip()
+
+removals = 0
+
+i = 0
+while i < n:
+    j = i
+    while j < n and s[j] == s[i]:
+        j += 1
+    run_length = j - i
+    removals += run_length - 1
+    i = j
+
+print(removals)
