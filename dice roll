@@ -1,0 +1,11 @@
+from fractions import Fraction
+
+Y, W = map(int, input().split())
+max_val = max(Y, W)
+favorable = 6 - max_val + 1
+if favorable <= 0:
+    print("0/1")
+else:
+    prob = Fraction(favorable, 6)
+    print(f"{prob.numerator}/{prob.denominator}")
+  
