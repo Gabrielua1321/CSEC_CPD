@@ -1,0 +1,10 @@
+s = input().strip()
+t = input().strip()
+
+position = 1
+for c in t:
+    if s[position - 1] == c:
+        position += 1
+
+print(position)
+  
