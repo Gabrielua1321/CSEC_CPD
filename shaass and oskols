@@ -1,0 +1,23 @@
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+
+birds = a[:]  # copy the initial counts
+
+for _ in range(m):
+    x, y = map(int, input().split())
+    x -= 1  # 0-based
+    y -= 1  # 0-based
+    left = y
+    right = birds[x] - y - 1
+    # Move left birds to x-1
+    if x > 0:
+        birds[x-1] += left
+    # Move right birds to x+1
+    if x < n-1:
+        birds[x+1] += right
+    # The wire x now has 0 birds
+    birds[x] = 0
+
+for count in birds:
+    print(count)
