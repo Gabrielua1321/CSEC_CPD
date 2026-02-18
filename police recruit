@@ -1,0 +1,22 @@
+import sys
+
+input = sys.stdin.read
+data = input().split()
+
+n = int(data[0])
+events = list(map(int, data[1:]))
+
+total_officers = 0
+assigned = 0
+unsolved = 0
+
+for e in events:
+    if e == -1:
+        if total_officers > assigned:
+            assigned += 1
+        else:
+            unsolved += 1
+    else:
+        total_officers += e
+
+print(unsolved)
