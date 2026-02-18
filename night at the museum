@@ -1,0 +1,10 @@
+s = input().strip()
+current = 0
+total = 0
+for c in s:
+    target = ord(c) - ord('a')
+    diff = abs(target - current)
+    turns = min(diff, 26 - diff)
+    total += turns
+    current = target
+print(total)
